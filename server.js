@@ -75,6 +75,14 @@ function generateExplanation(ber, ebNoDb, M) {
 // === Routes ===
 
 // This is the main API endpoint for our calculator
+// === Routes ===
+
+// ADD THIS NEW TEST ROUTE
+app.get('/api/test', (req, res) => {
+    res.json({ message: 'Success! The Render server is online and responding.' });
+});
+
+
 app.post('/api/ber', (req, res) => {
     // Get the input from the request body sent by the frontend
     const { ebNoLinear, modulationOrder } = req.body;
