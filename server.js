@@ -11,8 +11,11 @@ const PORT = process.env.PORT || 3001;
 // --- CORS Configuration ---
 // Define the list of websites that are allowed to access this server.
 const allowedOrigins = [
-    'https://ber-calculator-client-6j70mopxl-naseems-projects-1f6111c0.vercel.app', // Your Vercel URL
-    'http://localhost:3000' // For running your React app locally
+    // This MUST be the exact URL of your Vercel frontend
+    'https://ber-calculator-client-6j70mopxl-naseems-projects-1f6111c0.vercel.app',
+
+    // This is for running your React app locally for testing
+    'http://localhost:3000'
 ];
 
 const corsOptions = {
@@ -22,6 +25,8 @@ const corsOptions = {
         if (!origin || allowedOrigins.indexOf(origin) !== -1) {
             callback(null, true);
         } else {
+            // This will log the blocked URL to your Render logs for debugging
+            console.error('CORS Error: This origin is not allowed ->', origin);
             callback(new Error('Not allowed by CORS'));
         }
     }
