@@ -1,4 +1,4 @@
-// =================================================================
+﻿// =================================================================
 // === FINAL CORRECTED server/server.js ============================
 // =================================================================
 
@@ -10,14 +10,11 @@ const PORT = process.env.PORT || 3001;
 
 // --- CORS Configuration ---
 // Define the list of websites that are allowed to access this server.
+// ✅ FINAL CORRECTED ORIGINS
 const allowedOrigins = [
-    // This MUST be the exact URL of your Vercel frontend
-    'https://ber-calculator-client-6j70mopxl-naseems-projects-1f6111c0.vercel.app',
-
-    // This is for running your React app locally for testing
-    'http://localhost:3000'
+    'https://ber-calculator-client-7nr9t8upg-naseems-projects-1f6111c0.vercel.app', // The NEW, correct Vercel URL
+    'http://localhost:3000' // For running your React app locally
 ];
-
 const corsOptions = {
     origin: function (origin, callback) {
         // Allow requests with no origin (like mobile apps or curl requests)
